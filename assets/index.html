@@ -4,21 +4,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Weather Dashboard</title>
 </head>
-<body>
-  <header class="header">Weather Dashboard</header>
+<body class="flex-column min-100-vh">
+  <header class="header">
+    <h1 class="app-title"><i class="fab fa-github"></i>Weather Dashboard!</h1>
+    
+  </header>
 
-  <div class="flex-row align-center justify-center min-100-vh bg-primary">
-    <div class="col-12 col-md-9 flex-column align-center bg-light p-5">
-      <h1 class="text-primary">Search for a City:</h1>
-      <input id="search-input" class="form-input" type="text" placeholder="San Diego">
-      <button id="search-button" class="btn btn-info btn-block">Search</button>
-      <button id="search-button" class="btn btn-info btn-block">Atlanta</button>
 
+  <main class="flex-row justify-space-between">
+    <div class="col-12 col-md-4">
+
+      <div class="card">
+        <h2 class="card-header">Search for a City</h3>
+        <form class="card-body">
+          <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="btn">Search</button>
+        </form>
+      </div>
+
+      <div class="card">
+                <div id="cities" class="card-body">
+          <button cities-data="javascript" class="btn">Atlanta</button>
+          <button cities-data="html" class="btn">Denver</button>
+          <button cities-data="css" class="btn">Seattle</button>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <div class="col-12 col-md-8">
+      <h3 class="subtitle">5-Day Forecast: <span id="repo-search-term"></span></h2>
+      <div id="forecast-container" class="list-forecast"></div>
+    </div>
+  </main>
+
 
   <script src="script.js"></script>
 </body>
